@@ -72,7 +72,7 @@ const LogViewer: React.FC = () => {
   const fetchLogs = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await axios.get<LogResponse>(`https://ag2-tickets.sanniv.tech/logs?page=${currentPage}`);
+      const response = await axios.get<LogResponse>(`https://api.sdeltatech.co/logs?page=${currentPage}`);
       setLogData(response.data);
       setGroupedLogs(groupLogs(response.data.logs));
     } catch (error) {
